@@ -79,7 +79,7 @@ public class Book_Manage extends JFrame implements ActionListener
         this.setLocation((dim.width - getWidth())/2, (dim.height -getHeight())/2);
         this.setTitle("旭日东升图书管理系统");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false);
+        this.setResizable(true);
         this.setVisible(true);
     }
 
