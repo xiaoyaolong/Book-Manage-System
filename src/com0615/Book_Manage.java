@@ -43,9 +43,10 @@ public class Book_Manage extends JFrame implements ActionListener
         // jp1.setLayout(new FlowLayout());  // Default is the FlowLayout.
         jcb = new JComboBox();
         jcb.addItem("书    名:");
-        jcb.addItem("条 形 码:");
+        jcb.addItem("  ISBN:  ");
         jcb.addItem("所在位置:");
         jcb.addItem("作    者:");
+        jcb.addItem("类    别:");
         jcb.addActionListener(this);
         jtf = new JTextField(15);
         jb1 = new JButton("搜索");
@@ -73,7 +74,7 @@ public class Book_Manage extends JFrame implements ActionListener
         this.add(jp2,"South");  // Put the jp2 at the south border.
 
         // Set the appearance of Window.
-        this.setSize(800,600);
+        this.setSize(800,400);
         tk = getToolkit();
         Dimension dim = tk.getScreenSize();
         this.setLocation((dim.width - getWidth())/2, (dim.height -getHeight())/2);
@@ -102,6 +103,8 @@ public class Book_Manage extends JFrame implements ActionListener
                     sql_search = "Select * from dbo.books where book_loc like ?"; break;
                 case 3:
                     sql_search = "Select * from dbo.books where book_author like ?"; break;
+                case 4:
+                    sql_search = "Select * from dbo.books where book_cal like ?"; break;
             }
             if (search.equals(""))
             {

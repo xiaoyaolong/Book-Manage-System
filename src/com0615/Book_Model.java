@@ -68,12 +68,13 @@ public class Book_Model extends AbstractTableModel
             sql_command = "select * from dbo.books";
         }
         columnNames = new Vector();  // Define the name of columns.
-        columnNames.add("条 形 码");
+        columnNames.add("  ISBN  ");
         columnNames.add("书    名");
         columnNames.add("作    者");
         columnNames.add("出版时间");
         columnNames.add("出 版 社");
         columnNames.add("所在位置");
+        columnNames.add("图书类别");
 
 
         rowData = new Vector();   // Define the data in each row.
@@ -102,6 +103,7 @@ public class Book_Model extends AbstractTableModel
                 row_temp.add(rs.getString(4));
                 row_temp.add(rs.getString(5));
                 row_temp.add(rs.getString(6));
+                row_temp.add(rs.getString(7));
                 rowData.add(row_temp);
             }
         }catch (Exception e)
